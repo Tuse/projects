@@ -1,5 +1,0 @@
-Diagnosis(John,Uninfected)
-3
-LostWeight(x)&HasSymptom(x,Cough)=>Diagnosis(John,Uninfected)
-LostWeight(Tom)
-HasSymptom(Tom,Cough)
