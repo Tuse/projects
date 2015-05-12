@@ -1,0 +1,9 @@
+This is code for a software defined network, simulated via mininet.
+
+An arbiter receives demands from one or more hosts on the network, and allocates a path (denoted by a vlan tag) as well as a time slot in which hosts can transmit this traffic. 
+
+These allocations are sent back to the host, who will then transmit accordingly.
+
+TCP communications are utilized between each host and the arbiter, while transmissions between hosts are performed via raw sockets (using libtins) in order to add the vlan tag.
+
+Python scripts are used to setup Mininet and install routing rules in the virtual switches.
