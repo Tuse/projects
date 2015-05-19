@@ -437,7 +437,8 @@
 	}
 
 	function decode_message($msg) {
-		$length = $msg[1] & 0b01111111;
+		$length = ord($msg[1]) & 0b01111111;
+		$opcode = ord($msg[0]) & 0b00001111;
 		
 		$mask_idx = 2;
 		if($length == 126) {
@@ -459,9 +460,14 @@
 			$decoded_msg .= $msg[$i] ^ $mask[$i % 4];
 		}
 		
-		echo "recieved from client: $decoded_msg\n";
-		if($decoded_msg == "PING") {
-			echo "client ping - server did nothing\n";	
+		echo "recieved from client: $decoded_msg, opcode=" . $opcode . "\n";
+		$ping_oc = 9;
+		$close_oc = 8;
+		if($decoded_msg == "PING" || $opcode == $ping_oc) {
+			echo "client ping\n";	
+		}
+		if($opcode == $close_oc) {
+			echo "client close request\n";	
 		}
 		
 		$decoded_msg = json_decode($decoded_msg, true);
@@ -548,6 +554,8 @@
 					}
 					else if ($mode == "quit") {
 						remove_user($user_name);
+						$key = array_search($clients, $read);
+            			unset($clients[$key]);
 					}
 					else if($mode == "existing") {
 						$input = trim($input["cmd"]);
@@ -566,6 +574,8 @@
 						$num_written = socket_write($read_socket, $response, strlen($response));
 					}
 				}
+				$key = array_search($read_socket, $read);
+            	unset($read[$key]);
             }
 			
 		} // end of reading foreach

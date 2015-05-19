@@ -1,7 +1,7 @@
 var userName;
 var commandList = ["move", "say", "yell"];
 var transferMethod = "GET";
-var serverURL = "localhost:6789";
+var serverURL = "127.0.0.1:6789";//"50.178.171.11:6789";
 var xhr = false;
 var connection = false; //new WebSocket("ws://" + serverURL);
 
@@ -14,7 +14,6 @@ function checkName() {
 	var name = document.forms["username_form"].elements["username_input"].value;
 	if(name == "" || name == null) {
 		checkName();
-		return;
 	}
 	userName = name;
 	
@@ -150,7 +149,16 @@ function createSocket() {
 		if(res.msg == "Welcome") {
 			showGame();
 		}
-		outputServerResponse(res.msg);
+		else if(res.res == "success") {
+			var source = res.src;
+			if(source == null) {
+				source = userName;
+			}
+			outputMsg(source, res.msg);
+		}
+		else {
+			outputServerResponse(res.msg);
+		}
 	};
 	
 	connection.readyState.onchange = function() {
