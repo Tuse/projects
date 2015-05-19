@@ -1,0 +1,108 @@
+body {
+	background-color: black;
+	font-family: Verdana;
+}
+
+#welcome_msg {
+	margin-left: auto;
+    margin-right: auto;
+	text-align: center;
+	color: blue;
+}
+
+#msg_top {
+	display: inline;
+	text-align: center;
+	font-family: Adobe Arabic;
+	font-size: 36px;
+}
+
+#msg_bot {
+	display: inline;
+	text-align: center;
+	font-family: Apple Chancery;
+	font-size: 80px;
+}
+
+.fire_img {
+	position:relative;
+	width: 200px;
+	height: auto;
+	top: -170px;
+}
+
+#fire_img_l {
+	float: left;
+}
+
+#fire_img_r {
+	float: right;
+}
+
+#input_box {
+	top: 50px;
+	width: 600px;
+	height: 20px;
+	position: relative;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+#msg_box {
+	font-size: 12px;
+	border-radius: 5px;
+	position: relative;
+	top: 30px;
+	margin-left: auto;
+    margin-right: auto;
+	border: 2px solid white;
+	width: 600px;
+	height: 250px;
+	padding-top: 4px;
+	padding-left: 4px;
+	overflow: scroll;
+}
+
+#interaction_box {
+	top: 50px;
+	width: 600px;
+	height: 20px;
+	position: relative;
+	margin-left: auto;
+    margin-right: auto;
+}
+
+input {
+	border: 2px solid white;
+	border-radius: 5px;
+	width: 595px;
+	height: 20px;
+	font-family: inherit;
+	color:white;
+	font-size: 12px;
+	background-color:black;
+	display: inline;
+	padding-left: 4px;
+}
+
+#command_msg {
+	color:white;
+	display: inline;
+	font-size: 12px;
+	font-family: inherit;
+}
+
+.txt_output {
+	position: relative;
+	display: inline;
+	color:white;
+	font-size: 12px;
+	left:2px;
+}
+
+#error_msg {
+	color:red;
+	display: inline;
+	font-size: 12px;
+	font-family: inherit;
+}

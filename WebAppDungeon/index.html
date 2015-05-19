@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+	<head>
+		<meta content="text/html; charset=ISO-8859-1" http-equiv="content-type">
+		<title>index.html</title>
+		<link rel="stylesheet" href="style/index.css">
+		<script src="js/index.js"></script>
+	</head>
+	
+	<body>
+		<div id="welcome_msg">
+			<h5 id="msg_top">Welcome To</h5>
+			<br>
+			<h1 id="msg_bot">The Dungeon</h1>
+		</div>
+		
+		<img id="fire_img_l" class="fire_img" src="imgs/fire.jpg">
+		<img id="fire_img_r" class="fire_img" src="imgs/fire.jpg">
+		
+		<div id="interaction_box">
+			<div id="username_div">
+				<form id="username_form" onsubmit="checkName(); return false;">
+					<p id="command_msg">Please pick a username:</p>
+					<br>
+					<input id="username_input" type="text" name="username">
+					</intput>
+				</form>
+			</div>
+		</div>
+	
+	</body>
+</html>
