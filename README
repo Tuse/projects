@@ -1,9 +1,9 @@
 Welcome to my Github!
 
-As of now, it contains:
+At this point, it's mostly comprised of school projects, including
 
- - A Java AI agent
- - Some of the code from a web application I developed
- - A software defined networking application 
+ - A Java game playing agent
+ - A web messaging app that uses websockets (PHP, JS)
+ - A software defined networking application (Python / C++)
 
 More to come soon!
